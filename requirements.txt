@@ -1,0 +1,6 @@
+pandas
+unidecode
+streamlit
+numpy
+geopy
+lxml
