@@ -43,9 +43,9 @@ def calc_distances(df, chosen_city):
 
 data, search_df = get_data()
 
-st.title("Helper Apoia SUS")
+st.title("Helper ApoiASUS")
 st.sidebar.title("Filtros")
-st.markdown("Essa é uma aplicação em desenvolvimento com o intuito de ajudar você a achar a cidade mais próxima com vagas no Apoia SUS")
+st.markdown("Essa é uma aplicação em desenvolvimento com o intuito de ajudar você a achar a cidade mais próxima com vagas no ApoiASUS. Aqui os dados estão sempre atualizados com os do [ApoiASUS](https://sgtes.unasus.gov.br/apoiasus/login/listadevagas.asp)")
 st.sidebar.markdown("Aqui você pode filtrar melhor a distância máxima de sua cidade e sua profissão de interesse")
 
 st.sidebar.title("Configurações")
