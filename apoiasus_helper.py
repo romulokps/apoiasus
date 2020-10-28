@@ -43,16 +43,16 @@ def calc_distances(df, chosen_city):
 
 data, search_df = get_data()
 
-st.title("Help Apoia SUS")
+st.title("Helper Apoia SUS")
 st.sidebar.title("Filtros")
 st.markdown("Essa é uma aplicação em desenvolvimento com o intuito de ajudar você a achar a cidade mais próxima com vagas no Apoia SUS")
-st.sidebar.markdown("Aqui você pode filtrar melhor a distância máxima de sua cidade e sua profissão")
+st.sidebar.markdown("Aqui você pode filtrar melhor a distância máxima de sua cidade e sua profissão de interesse")
 
 st.sidebar.title("Configurações")
 
 # Pegando a distância aproximada entre as cidades
 city = st.sidebar.text_input('Digite o nome da sua cidade')
-state = st.sidebar.text_input('Digite o nome de seu estado')
+state = st.sidebar.text_input('Digite a sigla de seu estado')
 
 if city and state:
     city = city.lower()
@@ -83,9 +83,18 @@ if city and state:
     if chosen_dist:
         data = data.loc[data.distancia <= chosen_dist]
 
+# longitude , latitude
+st.title("Mapa com resultados")
+st.map(data)
+
 # Mostrando o dataframe
 if st.sidebar.checkbox("Mostrar resultados"):
-    st.write(data[["UF", "Município", select, "ibgeID", "distancia"]])
+	st.title("Tabela com resultados")
+	st.write(data[["UF", "Município", select, "ibgeID", "distancia"]])
 
-# longitude , latitude
-st.map(data)
+st.title("Autores")
+st.image(["imgs/Itamar.png", "imgs/Romulo.jpg"], caption=["Itamar Rocha, estudante de Engenharia da computação - UFPB", "Rômulo Kunrath, estudante de Medicina - UFPB"], width=300)
+
+st.title("Contato")
+st.markdown("Itamar : [linkedin](https://www.linkedin.com/in/itamarrocha/) , [Github](https://github.com/ItamarRocha/)")
+st.markdown("Rômulo : [Email](mailto:romulokps@gmail.com) , [Github](https://github.com/romulokps)")
